@@ -7,7 +7,7 @@ public class Ejercicio_110 {
         /* **1** Dado un número n: Cuenta cuántos números entre 1 y n:, son múltiplos de 3, pero no múltiplos de 5*/
         int numero = 16;
         int contador = 0;
-        for (int i = 0; i <= numero; i++){
+        for (int i = 1; i <= numero; i++){
             if (i % 3 == 0 && i % 5 != 0){
                 contador++;
             }
@@ -17,15 +17,23 @@ public class Ejercicio_110 {
         /* **2** Dado un String texto: Invierte cada palabra, pero mantiene el orden*/
         String texto = "hola mundo";
         String textoInverso = "";
-        for (int i = texto.length() -1; i >= 0; i--){
-            textoInverso += texto.charAt(i);
+        String[] palabras = texto.split(" ");
+
+        for (int i = 0; i < palabras.length; i++){
+            String palabraActual = palabras[i];
+            String palabrainvertida = "";
+            for (int s = palabraActual.length() -1; s >= 0; s--){
+                palabrainvertida += palabraActual.charAt(s);
+            }
+            textoInverso += palabrainvertida + " ";
         }
+
         System.out.println(textoInverso);
 
         /* **3** Dado un int[] array: Encuentra el segundo número más pequeño, Considera valores repetidos correctamente*/
         int [] array = {1,1,2,2,3,3,4,0};
         int min = Integer.MAX_VALUE;
-        int segMin = 0;
+        int segMin = Integer.MAX_VALUE;
 
         for (int i = 0; i < array.length; i++){
             if (array[i] < min){
@@ -57,29 +65,22 @@ public class Ejercicio_110 {
 
         /* **5** PATRON */
         int h = 5;
-        for (int fila = 0; fila < h; fila++){
-            for (int col = 0; col < h - fila; col++){
+
+        for (int fila = 1; fila <= h; fila++) {
+            // espacios iniciales
+            for (int esp = 1; esp <= h - fila; esp++) {
                 System.out.print(" ");
             }
-            for (int col = 1; col <= 1; col++){
-                System.out.print("*");
-            }
-            if (fila >= 1 && fila <= 3){
-                for (int col = 1; col <= (2 * fila) - 1 ; col++){
+
+            // columnas
+            for (int col = 1; col <= 2 * fila - 1; col++) {
+                if (fila == h || col == 1 || col == 2 * fila - 1) {
+                    System.out.print("*");
+                } else {
                     System.out.print(" ");
                 }
-                for (int col = 1; col <= 1; col++){
-                    System.out.print("*");
-                }
             }
-            if (fila == 4){
-                for (int col = 1; col <= (2 * fila) - 1 ; col++){
-                    System.out.print("*");
-                }
-                for (int col = 1; col <= 1; col++){
-                    System.out.print("*");
-                }
-            }
+
             System.out.println();
         }
     }
