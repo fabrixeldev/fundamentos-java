@@ -21,14 +21,24 @@ public class Ejercicio_114 {
         /* **2** Dado un int[] array: Muestra solo los números que aparecen más de una vez, pero imprímelos una sola vez.*/
         for (int i = 0; i < array.length; i++){
             int contadorRepetidos = 0;
+            boolean repetido = false;
+
             for (int j = 0; j < array.length; j++){
                 if (array[i] == array[j]){
                     contadorRepetidos++;
                 }
             }
             if (contadorRepetidos > 1){
+                for (int j = 0; j < i; j++){
+                    if (array[i] == array[j]){
+                        repetido = true;
+                    }
+                }
+            }
+            if (contadorRepetidos > 1 && !repetido){
                 System.out.print(array[i] + " ");
             }
+
         }
         System.out.println();
 
@@ -67,10 +77,10 @@ public class Ejercicio_114 {
          ******
 
          */
-        int h = 6;
+        int h = 11;
         for (int fila = 0; fila < h; fila++){
             for (int col = 0; col < h; col++){
-                if (fila == 0 || fila == h - 1 || col == 0 || col == h - 1 || fila >= 2 && fila <= 3 && col >= 2 && col <= 3){
+                if (fila == 0 || fila == h - 1 || col == 0 || col == h - 1 || fila > 1 && fila < h - 2 && col > 1 && col < h - 2){
                     System.out.print("*");
                 }else {
                     System.out.print(" ");
