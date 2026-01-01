@@ -75,5 +75,26 @@ public class Ejercicio_115 {
 
         System.out.println("El resultado Final es " + listaProcesada);
 
+        /* **5**
+         *******
+         *     *
+         *  *  *
+         * *** *
+         *  *  *
+         *     *
+         *******
+         */
+
+        int h = 7;
+        for(int fila = 0; fila < h; fila++){
+            for (int col = 0; col < h; col++){
+                if (fila == 0 || fila == h - 1 || col == 0 || col == h - 1 || col == h / 2 && fila > 1 && fila < h - 2 || fila == h / 2 && col > 1 && col < h - 2){
+                    System.out.print("*");
+                }else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
     }
 }
