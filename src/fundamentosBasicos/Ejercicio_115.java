@@ -86,15 +86,28 @@ public class Ejercicio_115 {
          */
 
         int h = 7;
-        for(int fila = 0; fila < h; fila++){
-            for (int col = 0; col < h; col++){
-                if (fila == 0 || fila == h - 1 || col == 0 || col == h - 1 || col == h / 2 && fila > 1 && fila < h - 2 || fila == h / 2 && col > 1 && col < h - 2){
-                    System.out.print("*");
-                }else {
-                    System.out.print(" ");
+        if (h % 2 == 0) {
+            for(int fila = 0; fila <= h; fila++) {
+                for (int col = 0; col <= h; col++) {
+                    if (fila == 0 || fila == h || col == 0 || col == h || col == h / 2 && fila > 1 && fila < h - 1 || fila == h / 2 && col > 1 && col < h - 1) {
+                        System.out.print("*");
+                    } else {
+                        System.out.print(" ");
+                    }
                 }
+                System.out.println();
             }
-            System.out.println();
+        }else {
+            for(int fila = 0; fila < h; fila++){
+                for (int col = 0; col < h; col++) {
+                    if (fila == 0 || fila == h - 1 || col == 0 || col == h - 1 || col == h / 2 && fila > 1 && fila < h - 2 || fila == h / 2 && col > 1 && col < h - 2){
+                        System.out.print("*");
+                    }else {
+                        System.out.print(" ");
+                    }
+                }
+                System.out.println();
+            }
         }
     }
 }
