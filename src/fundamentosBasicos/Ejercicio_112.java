@@ -60,16 +60,29 @@ public class Ejercicio_112 {
          *   *
          *****
          */
-        int h = 5;
-        for (int fila = 0; fila < h; fila++){
-            for (int col = 0; col < h; col++){
-                if (fila == 0 || fila == h - 1 || col == 0 || col == h - 1 || fila == h / 2 && col == h / 2){
-                    System.out.print("*");
-                }else {
-                    System.out.print(" ");
+        int h = 7;
+        if (h % 2 == 0){
+            for (int fila = 0; fila <= h; fila++){
+                for (int col = 0; col <= h; col++){
+                    if (fila == 0 || fila == h || col == 0 || col == h || fila == h / 2 && col == h / 2){
+                        System.out.print("*");
+                    }else {
+                        System.out.print(" ");
+                    }
                 }
+                System.out.println();
             }
-            System.out.println();
+        }else{
+            for (int fila = 0; fila < h; fila++){
+                for (int col = 0; col < h; col++){
+                    if (fila == 0 || fila == h - 1 || col == 0 || col == h - 1 || fila == h / 2 && col == h / 2){
+                        System.out.print("*");
+                    }else {
+                        System.out.print(" ");
+                    }
+                }
+                System.out.println();
+            }
         }
     }
 }
