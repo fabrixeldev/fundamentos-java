@@ -73,10 +73,37 @@ Imprime el resultado*/
 
         List<Integer> listaProcesada = listaNumeros.stream()
                 .filter(i -> i < 0 || i > 50)
-                .map(i -> Math.abs(i))
+                .map(Math::abs)
                 .distinct()
                 .toList();
 
         System.out.println(listaProcesada);
+
+        /* **4** Dado un número n:
+Mientras n sea distinto de 0:
+Si n es múltiplo de 5 → réstale 5
+Si no → divídelo entre 2 (división entera)
+Imprime:
+Cuántas veces se restó 5
+Cuántas veces se dividió entre 2
+El valor final de n*/
+
+        int n = 13;
+        int contadorResta = 0;
+        int contadorDivision = 0;
+
+        while (n != 0){
+            if (n % 5 == 0){
+                n -= 5;
+                contadorResta++;
+            }else {
+                n /= 2;
+                contadorDivision++;
+            }
+        }
+        System.out.println("Veces que se resto 5 = " + contadorResta);
+        System.out.println("Veces que se dividio en 2 = " + contadorDivision);
+        System.out.println("Valor Final de N = " + n);
+
     }
 }
